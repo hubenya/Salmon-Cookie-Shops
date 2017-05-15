@@ -2,14 +2,37 @@ var firstAndPike = {
   location: 'First and Pike',
   minCust: 23,
   maxCust: 65,
-  avgCookieSale: 6.3,
-  details: function() {
-    return 'Salmon Cookie shop at ' + this.location[0] + ' minimum of ' + this.minCust[0] + ' customers and maximum of ' + this.minCust[0] + '. Whihc averages out to ' + this.avgCookieSale;
+  avgSale: 6.3,
+  RandomCustomers: function() {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
   }
 };
 
-firstAndPike.details();
+firstAndPike.RandomCustomers();
 
+
+
+
+
+//firstAndPike.details();
+
+function location1() {
+  var container = document.createElement('div');
+  container.innerHTML = '<p>' + firstAndPike.details() + '</p>';
+  document.body.appendChild(container);
+
+  var list = document.createElement('ul');
+  var list_arr = [];
+
+  for (var i = 0; i < firstAndPike.minCust.length; i++) {
+    list_arr.push('<li>' + firstAndPike.minCust[i] + '</li>');
+
+  }
+  var full_list = list_arr.join('');
+  list.innerHTML = full_list;
+  document.body.appendChild(list);
+}
+location1();
 
 
 
