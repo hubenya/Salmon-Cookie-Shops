@@ -3,18 +3,29 @@ var firstAndPike = {
   minCust: 23,
   maxCust: 65,
   avgSale: 6.3,
-  RandomCustomers: function() {
+  custPerHour:[],
+  cusEachHour: function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+  },
+  cookieSoldPerHour: function() {
+    for (var i = 0; i < 14; i++) {
+      this.custPerHour.push(Math.floor(this.avgSale * this.cusEachHour()));
+
+       //var custPerHour = firstAndPike.cusEachHour(this.minCust, this.maxCust);
+       //this.custPerHour.push(custPerHour);
+    }
+    console.log(this.cusEachHour());
   }
+
 };
-
-firstAndPike.RandomCustomers();
-
-
+firstAndPike.cookieSoldPerHour();
+firstAndPike.custPerHour;
 
 
 
-//firstAndPike.details();
+
+
+/*
 
 function location1() {
   var container = document.createElement('div');
@@ -105,3 +116,4 @@ var Alki = {
 };
 
 Alki.details();
+*/
