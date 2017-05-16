@@ -114,3 +114,11 @@ p {
   background: #444 50%;
   opacity: 0.7;
 	border: dotted 2px orange;
+	thead {
+	  background: #777;
+	}
+	
+	td {
+	  padding: 20px;
+	  border: solid 1px black;
+	}
