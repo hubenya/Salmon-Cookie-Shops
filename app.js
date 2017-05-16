@@ -8,6 +8,27 @@ function Store(minimum, maximum, averageSales) {
   this.maximum = maximum;
   this.averageSales = averageSales;
 }
+//random customer genrator
+customerEachHour: function(){
+return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
+},
+cookieSoldEachHour: function() {
+for (var i = 0; i < hours.length; i++) {
+this.cookiesSoldPerHour.push(Math.floor(this.avgSale * this.customerEachHour()));
+//console.log(hours[i], this.cookiesSoldPerHour[i]);
+//firstAndPike.totalSoldCookiesPike +- this.cookiesSoldPerHour[i];
+//need to add total sold logic
+hours[i], this.cookiesSoldPerHour[i];
+}
+console.log(this.customerEachHour());
+}
+
+};
+firstAndPike.cookieSoldEachHour();
+firstAndPike.cookiesSoldPerHour;
+
+
+
  //new stores
 var FirstandPike = new Store(23, 65, 6.3);
 var SeaTacAirport = new Store(3, 24, 1.2);
@@ -16,26 +37,4 @@ var CapitolHill = new Store(20, 38, 2.3);
 var Alki = new Store(2, 16, 4.6);
 
 var Stores = [FirstandPike, SeaTacAirport, SeattleCenter, CapitolHill, Alki];
-
-    //random customer genrator
-
-/*
-
-customerEachHour: function() {
-  return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
-},
-cookieSoldEachHour: function() {
-  for (var i = 0; i < hours.length; i++) {
-    this.cookiesSoldPerHour.push(Math.floor(this.avgSale * this.customerEachHour()));
-    //console.log(hours[i], this.cookiesSoldPerHour[i]);
-    firstAndPike.totalSoldCookiesPike +- this.cookiesSoldPerHour[i];
-    //need to add total sold logic
-    hours[i], this.cookiesSoldPerHour[i];
-  }
-    //console.log(this.customerEachHour());
-}
-
-};
-firstAndPike.cookieSoldEachHour();
-firstAndPike.cookiesSoldPerHour;
-*/
+var dataStores = [];
