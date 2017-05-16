@@ -1,71 +1,60 @@
-var firstAndPike = {
-  location: 'First and Pike',
-  minCust: 23,
-  maxCust: 65,
-  avgSale: 6.3,
-  custPerHour:[],
-  cusEachHour: function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
-  },
-  cookieSoldPerHour: function() {
-    var container = document.createElement('div');
-    container.innerHTML = '<p>' + firstAndPike.custPerHour; + '</p>';
-    document.body.appendChild(container);
-    for (var i = 6; i < 15; i++) {
-      this.custPerHour.push(Math.floor(this.avgSale * this.cusEachHour()));
-      //console.log(this.cusEachHour());
+'use strict';
 
-      var custPerHour = firstAndPike.cusEachHour(this.minCust, this.maxCust);
-      this.custPerHour.push(custPerHour);
-    }
+//I wanted to practice and make it loop but was not able to loop more than once. i feel like i'm missing something
+var hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm',];
 
-    var list = document.createElement('ul');
-    var list_arr = [];
-
-    var full_list = list_arr.join('');
-
-    list.innerHTML = full_list;
-    document.body.appendChild(list);
-  }
-
-};
-console.log(firstAndPike.cookieSoldPerHour());
-console.log(firstAndPike.custPerHour);
-
-
-
-
-
-
-  // part 2 //
-
-
-
-/*
   var firstAndPike = {
     location: 'First and Pike',
     minCust: 23,
     maxCust: 65,
     avgSale: 6.3,
-    custPerHour:[],
-    cusEachHour: function() {
-      return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+    cookiesSoldPerHour: [],
+    totalSoldCookies: 0,
+
+    //random customer genrator
+    customerEachHour: function() {
+      return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
+    },
+    cookieSoldEachHour: function() {
+      for (var i = 0; i < hours.length; i++) {
+        this.cookiesSoldPerHour.push(Math.floor(this.avgSale * this.customerEachHour()));
+        console.log(hours[0], this.cookiesSoldPerHour[0]);
+        //need to add total sold logic
+      }
+      //console.log(this.customerEachHour());
+    }
+
+  };
+  firstAndPike.cookieSoldEachHour(hours, this.cookiesSoldPerHour);
+  firstAndPike.cookiesSoldPerHour;
+
+/*
+
+var hours = ['6 am', '7 am', '8 am', '9 am', '10am', '11am', '12pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm',];
+
+  var firstAndPike = {
+    location: 'First and Pike',
+    minCust: 23,
+    maxCust: 65,
+    avgSale: 6.3,
+    cookiesSoldPerHour: [],
+
+    //random customer genrator
+    customerEachHour: function() {
+      return Math.floor(Math.random() * (this.maxCust - this.minCust +1) + this.minCust);
     },
     cookieSoldPerHour: function() {
-      for (var i = 0; i < 14; i++) {
-        this.custPerHour.push(Math.floor(this.avgSale * this.cusEachHour()));
+      for (var i = 0; i < hours.lenght; i++) {
+        this.cookieSoldPerHour.push(Math.floor(this.avgSale * this.cusEachHour()));
+        console.log(hours[0], this.cookieSoldPerHour[0]);
 
-         //var custPerHour = firstAndPike.cusEachHour(this.minCust, this.maxCust);
-         //this.custPerHour.push(custPerHour);
       }
-      console.log(this.cusEachHour());
+      console.log(this.customerEachHour());
     }
 
   };
   firstAndPike.cookieSoldPerHour();
   firstAndPike.custPerHour;
-
-
 
 
 
