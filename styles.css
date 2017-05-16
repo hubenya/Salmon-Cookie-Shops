@@ -102,7 +102,7 @@ h2 {
   margin-bottom: 10px;
   font-family: cursive;
 }
-main p {
+p {
   margin: 15px 0px;
   font-family:monospace;
   font-size: 20px;
@@ -113,14 +113,4 @@ main p {
   text-rendering: auto;
   background: #444 50%;
   opacity: 0.7;
-}
-footer {
-  height: 100px;
-  background: #444;
-  position: relative;
-  z-index: 1;
-}
-footer div {
-  width: 960px;
-  margin: 0 auto;
-}
+	border: dotted 2px orange;

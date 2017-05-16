@@ -8,46 +8,66 @@ var firstAndPike = {
     return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
   },
   cookieSoldPerHour: function() {
-    for (var i = 0; i < 14; i++) {
+    var container = document.createElement('div');
+    container.innerHTML = '<p>' + firstAndPike.custPerHour; + '</p>';
+    document.body.appendChild(container);
+    for (var i = 6; i < 15; i++) {
       this.custPerHour.push(Math.floor(this.avgSale * this.cusEachHour()));
+      //console.log(this.cusEachHour());
 
-       //var custPerHour = firstAndPike.cusEachHour(this.minCust, this.maxCust);
-       //this.custPerHour.push(custPerHour);
+      var custPerHour = firstAndPike.cusEachHour(this.minCust, this.maxCust);
+      this.custPerHour.push(custPerHour);
     }
-    console.log(this.cusEachHour());
+
+    var list = document.createElement('ul');
+    var list_arr = [];
+
+    var full_list = list_arr.join('');
+
+    list.innerHTML = full_list;
+    document.body.appendChild(list);
   }
 
 };
-firstAndPike.cookieSoldPerHour();
-firstAndPike.custPerHour;
+console.log(firstAndPike.cookieSoldPerHour());
+console.log(firstAndPike.custPerHour);
 
 
 
-function domStuff() {
-  // part 1 //
-  var container = document.createElement('div');
-  container.innerHTML = '<p>' + firstAndPike.cusEachHour() + '</p>';
-  document.body.appendChild(container);
+
+
 
   // part 2 //
-  var list = document.createElement('ul');
-  var list_arr = [];
-
-
-
-  var full_list = list_arr.join('');
-
-  list.innerHTML = full_list;
-  document.body.appendChild(list);
-}
-
-// call our domStuff function
-domStuff();
-
 
 
 
 /*
+  var firstAndPike = {
+    location: 'First and Pike',
+    minCust: 23,
+    maxCust: 65,
+    avgSale: 6.3,
+    custPerHour:[],
+    cusEachHour: function() {
+      return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+    },
+    cookieSoldPerHour: function() {
+      for (var i = 0; i < 14; i++) {
+        this.custPerHour.push(Math.floor(this.avgSale * this.cusEachHour()));
+
+         //var custPerHour = firstAndPike.cusEachHour(this.minCust, this.maxCust);
+         //this.custPerHour.push(custPerHour);
+      }
+      console.log(this.cusEachHour());
+    }
+
+  };
+  firstAndPike.cookieSoldPerHour();
+  firstAndPike.custPerHour;
+
+
+
+
 
 
 
