@@ -15,7 +15,6 @@ Store.prototype.randomNumberGenarator = function(){
   return Math.floor(Math.random() * (this.maximum - this.minimum) + this.minimum);
 };
 console.log(this.randomNumberGenarator);
-
 // loop to see how many cookies are sold each hour per store
 Store.prototype.cookieSoldEachHour = function() {
   for (var i = 0; i < hours.length; i++) {
@@ -29,21 +28,40 @@ Store.prototype.cookieSoldEachHour = function() {
   //I was testing my code to see where my problem is.
   console.log('what cookies sold per hour', this.cookiesSoldPerHour);
 };
+function sotoreList(store) {
+  var container = document.createElement('div');
+  container.innerHTML = '<p>' + store.location + '</p>';
+  document.body.appendChild(container);
+
+  var list = document.createElement('ul');
+  var list_arr = [];
+
+  for (var i = 0; i < hours.length; i++) {
+    list_arr.push('<li>' + hours[i]+ ':' + store.cookiesSoldPerHour[i] + '</li>');
+
+  }
+  var full_list = list_arr.join('');
+  list.innerHTML = full_list;
+  document.body.appendChild(list);
+}
 
  //list of stores data
-var FirstandPike = new Store('First and Pike', 23, 65, 6.3);
+var FirstandPike = new Store('First and Pike',23, 65, 6.3);
 var SeaTacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
-var SeattleCenter = new Store('SeattleCenter', 11, 38, 3.7);
-var CapitolHill = new Store('CapitolHill', 20, 38, 2.3);
-var Alki = new Store('Alki', 2, 16, 4.6);
-
+var SeattleCenter = new Store('Seattle Center', 11, 38, 3.7);
+var CapitolHill = new Store('Capitol Hill', 20, 38, 2.3);
+var Alki = new Store('Alki',2, 16, 4.6);
 
 //var Stores = [FirstandPike, SeaTacAirport, SeattleCenter, CapitolHill, Alki];
 //var dataStores = [];
-
 //storing results for each store location
 FirstandPike.cookieSoldEachHour();
 SeaTacAirport.cookieSoldEachHour();
 SeattleCenter.cookieSoldEachHour();
 CapitolHill.cookieSoldEachHour();
 Alki.cookieSoldEachHour();
+sotoreList(FirstandPike);
+sotoreList(SeaTacAirport);
+sotoreList(SeattleCenter);
+sotoreList(CapitolHill);
+sotoreList(Alki);
