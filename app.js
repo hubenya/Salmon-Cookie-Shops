@@ -23,49 +23,31 @@ firstAndPike.custPerHour;
 
 
 
-
-
-/*
-
-function location1() {
+function domStuff() {
+  // part 1 //
   var container = document.createElement('div');
-  container.innerHTML = '<p>' + firstAndPike.details() + '</p>';
+  container.innerHTML = '<p>' + firstAndPike.cusEachHour() + '</p>';
   document.body.appendChild(container);
 
+  // part 2 //
   var list = document.createElement('ul');
   var list_arr = [];
 
-  for (var i = 0; i < firstAndPike.minCust.length; i++) {
-    list_arr.push('<li>' + firstAndPike.minCust[i] + '</li>');
 
-  }
+
   var full_list = list_arr.join('');
+
   list.innerHTML = full_list;
   document.body.appendChild(list);
 }
-location1();
+
+// call our domStuff function
+domStuff();
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 
 
 
