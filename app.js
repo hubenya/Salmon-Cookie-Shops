@@ -9,7 +9,7 @@ var hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', 
     maxCust: 65,
     avgSale: 6.3,
     cookiesSoldPerHour: [],
-    totalSoldCookies: 0,
+    totalSoldCookiesPike: 0,
 
     //random customer genrator
     customerEachHour: function() {
@@ -18,14 +18,16 @@ var hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', 
     cookieSoldEachHour: function() {
       for (var i = 0; i < hours.length; i++) {
         this.cookiesSoldPerHour.push(Math.floor(this.avgSale * this.customerEachHour()));
-        console.log(hours[0], this.cookiesSoldPerHour[0]);
+        //console.log(hours[i], this.cookiesSoldPerHour[i]);
+        totalSoldCookiesPike +- this.cookiesSoldPerHour[i];
         //need to add total sold logic
+        // hours[i], this.cookiesSoldPerHour[i];
       }
       //console.log(this.customerEachHour());
     }
 
   };
-  firstAndPike.cookieSoldEachHour(hours, this.cookiesSoldPerHour);
+  firstAndPike.cookieSoldEachHour();
   firstAndPike.cookiesSoldPerHour;
 
 /*
