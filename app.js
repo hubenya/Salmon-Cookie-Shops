@@ -3,32 +3,32 @@
 //I wanted to practice and make it loop but was not able to loop more than once. i feel like i'm missing something
 var hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm',];
 
-  var firstAndPike = {
-    location: 'First and Pike',
-    minCust: 23,
-    maxCust: 65,
-    avgSale: 6.3,
-    cookiesSoldPerHour: [],
-    totalSoldCookiesPike: 0,
+var firstAndPike = {
+  location: 'First and Pike',
+  minCust: 23,
+  maxCust: 65,
+  avgSale: 6.3,
+  cookiesSoldPerHour: [],
+  totalSoldCookiesPike: 0,
 
     //random customer genrator
-    customerEachHour: function() {
-      return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
-    },
-    cookieSoldEachHour: function() {
-      for (var i = 0; i < hours.length; i++) {
-        this.cookiesSoldPerHour.push(Math.floor(this.avgSale * this.customerEachHour()));
-        //console.log(hours[i], this.cookiesSoldPerHour[i]);
-        totalSoldCookiesPike +- this.cookiesSoldPerHour[i];
-        //need to add total sold logic
-        // hours[i], this.cookiesSoldPerHour[i];
-      }
-      //console.log(this.customerEachHour());
+  customerEachHour: function() {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
+  },
+  cookieSoldEachHour: function() {
+    for (var i = 0; i < hours.length; i++) {
+      this.cookiesSoldPerHour.push(Math.floor(this.avgSale * this.customerEachHour()));
+      //console.log(hours[i], this.cookiesSoldPerHour[i]);
+      firstAndPike.totalSoldCookiesPike +- this.cookiesSoldPerHour[i];
+      //need to add total sold logic
+      hours[i], this.cookiesSoldPerHour[i];
     }
+      //console.log(this.customerEachHour());
+  }
 
-  };
-  firstAndPike.cookieSoldEachHour();
-  firstAndPike.cookiesSoldPerHour;
+};
+firstAndPike.cookieSoldEachHour();
+firstAndPike.cookiesSoldPerHour;
 
 /*
 
