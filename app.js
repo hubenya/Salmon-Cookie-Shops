@@ -9,26 +9,29 @@ function Store(location, minimum, maximum, averageSales) {
   this.maximum = maximum;
   this.averageSales = averageSales;
   this.cookiesSoldPerHour = [];
+  this.totalSoldCookies = 0;
 }
 //random customer genrator that come through the door
 Store.prototype.randomNumberGenarator = function(){
   return Math.floor(Math.random() * (this.maximum - this.minimum) + this.minimum);
 };
-console.log(this.randomNumberGenarator);
+//console.log(this.randomNumberGenarator);
 // loop to see how many cookies are sold each hour per store
 Store.prototype.cookieSoldEachHour = function() {
   for (var i = 0; i < hours.length; i++) {
     this.cookiesSoldPerHour.push(Math.floor(this.averageSales * this.randomNumberGenarator()));
-//console.log(hours[i], this.cookiesSoldPerHour[i]);
-//firstAndPike.totalSoldCookiesPike +- this.cookiesSoldPerHour[i];
-//need to add total sold logic
-    //hours[i], this.cookiesSoldPerHour[i];
   }
+
   //console.log(this.cookieSoldEachHour());
   //I was testing my code to see where my problem is.
-  console.log('what cookies sold per hour', this.cookiesSoldPerHour);
+  //console.log('what cookies sold per hour', this.cookiesSoldPerHour);
 };
-function sotoreList(store) {
+function sumArray(this.cookiesSoldPerHour) {
+  var total = this.cookiesSoldPerHour + this.cookieSoldEachHour();
+  return total;
+}
+
+function storeList(store) {
   var container = document.createElement('div');
   container.innerHTML = '<p>' + store.location + '</p>';
   document.body.appendChild(container);
@@ -37,7 +40,7 @@ function sotoreList(store) {
   var list_arr = [];
 
   for (var i = 0; i < hours.length; i++) {
-    list_arr.push('<li>' + hours[i]+ ':' + store.cookiesSoldPerHour[i] + '</li>');
+    list_arr.push('<li>' + hours[i]+ ': ' + store.cookiesSoldPerHour[i] + '</li>');
 
   }
   var full_list = list_arr.join('');
@@ -60,8 +63,9 @@ SeaTacAirport.cookieSoldEachHour();
 SeattleCenter.cookieSoldEachHour();
 CapitolHill.cookieSoldEachHour();
 Alki.cookieSoldEachHour();
-sotoreList(FirstandPike);
-sotoreList(SeaTacAirport);
-sotoreList(SeattleCenter);
-sotoreList(CapitolHill);
-sotoreList(Alki);
+storeList(FirstandPike);
+storeList(SeaTacAirport);
+storeList(SeattleCenter);
+storeList(CapitolHill);
+storeList(Alki);
+totalLocation();
