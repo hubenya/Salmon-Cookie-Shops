@@ -25,18 +25,12 @@ Store.prototype.cookieSoldEachHour = function() {
     this.cookiesSoldPerHour.push(Math.floor(this.averageSales * this.randomNumberGenarator()));
      //this.totalCookiesLocation += this.cookiesSoldPerHour[i];
   }
-
 };
-  //console.log(this.cookieSoldEachHour());
-  //I was testing my code to see where my problem is.
-  //console.log('what cookies sold per hour', this.cookiesSoldPerHour);
-// Store.prototype.totalCookiesDaily = function() {
-//
+//this is total cookies calculator
 Store.prototype.totalCookiesCalculator = function(){
   for (var j = 0; j < this.cookiesSoldPerHour.length; j++) {
     this.totalCookies += this.cookiesSoldPerHour[j];
   //console.log('Total cookies daily' + totalCookiesDaily());
-
   }
   return this.totalCookies;
 };
