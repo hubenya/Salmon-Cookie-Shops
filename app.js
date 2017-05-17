@@ -10,7 +10,8 @@ function Store(location, minimum, maximum, averageSales) {
   this.maximum = maximum;
   this.averageSales = averageSales;
   this.cookiesSoldPerHour = [];
-  this.totalCookiesLocation = 0;
+  //this.totalCookiesLocation();
+  //this.totalCookiesDaily();
 
 }
 //random customer genrator that come through the door
@@ -29,14 +30,17 @@ Store.prototype.cookieSoldEachHour = function() {
   //console.log(this.cookieSoldEachHour());
   //I was testing my code to see where my problem is.
   //console.log('what cookies sold per hour', this.cookiesSoldPerHour);
-this.totalCookiesDaily = function() {
-  for (var j = 0; j < this.cookiesSoldPerHour; j++) {
-    this.totalCookiesLocation += this.cookiesSoldPerHour[j];
-
-  //console.log('Total cookies daily' + totalCookiesDaily());
-  }
-
-};
+// Store.prototype.totalCookiesDaily = function() {
+//
+//   var totalCookiesDaily = 0;
+//   for (var j = 0; j < this.cookiesSoldPerHour; j++) {
+//     totalCookiesDaily += this.cookiesSoldPerHour[j];
+//   //console.log('Total cookies daily' + totalCookiesDaily());
+//
+//     this.totalCookiesLocation = totalCookiesDaily;
+//     return this.totalCookiesLocation;
+//   }
+//};
 
 function storeList(store) {
   var container = document.createElement('div');
@@ -60,7 +64,7 @@ var FirstandPike = new Store('First and Pike',23, 65, 6.3);
 var SeaTacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
 var SeattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var CapitolHill = new Store('Capitol Hill', 20, 38, 2.3);
-var Alki = new Store('Alki',2, 16, 4.6);
+var Alki = new Store('Alki', 2, 16, 4.6);
 
 //var Stores = [FirstandPike, SeaTacAirport, SeattleCenter, CapitolHill, Alki];
 //var dataStores = [];
@@ -76,4 +80,4 @@ storeList(SeaTacAirport);
 storeList(SeattleCenter);
 storeList(CapitolHill);
 storeList(Alki);
-this.totalCookiesDaily(FirstandPike);
+//this.totalCookiesDaily(FirstandPike);
