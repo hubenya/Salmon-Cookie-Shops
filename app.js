@@ -10,7 +10,7 @@ function Store(location, minimum, maximum, averageSales) {
   this.maximum = maximum;
   this.averageSales = averageSales;
   this.cookiesSoldPerHour = [];
-  //this.totalCookiesLocation();
+  this.totalCookies = 0;
   //this.totalCookiesDaily();
 
 }
@@ -32,28 +32,29 @@ Store.prototype.cookieSoldEachHour = function() {
   //console.log('what cookies sold per hour', this.cookiesSoldPerHour);
 // Store.prototype.totalCookiesDaily = function() {
 //
-//   var totalCookiesDaily = 0;
-//   for (var j = 0; j < this.cookiesSoldPerHour; j++) {
-//     totalCookiesDaily += this.cookiesSoldPerHour[j];
-//   //console.log('Total cookies daily' + totalCookiesDaily());
-//
-//     this.totalCookiesLocation = totalCookiesDaily;
-//     return this.totalCookiesLocation;
-//   }
-//};
+Store.prototype.totalCookiesCalculator = function(){
+  for (var j = 0; j < this.cookiesSoldPerHour.length; j++) {
+    this.totalCookies += this.cookiesSoldPerHour[j];
+  //console.log('Total cookies daily' + totalCookiesDaily());
 
-function storeList(store) {
+  }
+  return this.totalCookies;
+};
+
+function storeList(storeLocation) {
   var container = document.createElement('div');
-  container.innerHTML = '<p>' + store.location + '</p>';
+  container.innerHTML = '<p>' + storeLocation.location + '</p>';
   document.body.appendChild(container);
 
   var list = document.createElement('ul');
   var list_arr = [];
 
   for (var i = 0; i < hours.length; i++) {
-    list_arr.push('<li>' + hours[i]+ ': ' + store.cookiesSoldPerHour[i] + '</li>');
+    list_arr.push('<li>' + hours[i]+ ': ' + storeLocation.cookiesSoldPerHour[i] + '</li>');
 
   }
+
+  list_arr.push('<li> Total: ' + storeLocation.totalCookiesCalculator() + '</li>');
   var full_list = list_arr.join('');
   list.innerHTML = full_list;
   document.body.appendChild(list);

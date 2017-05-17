@@ -1,0 +1,64 @@
+/*Salse css goes here*/
+body {
+  font-family: helvetica;
+}
+
+
+header {
+  height: 100px;
+  background: #444;
+	color: #fff;
+	padding: 5px;
+  position: relative;
+  z-index: 1;
+}
+header div {
+  width: 960px;
+  margin: 0 auto;
+}
+nav {
+  position: absolute;
+  font-size: 25px;
+  margin: 0px;
+  z-index: 3;
+}
+h1 {
+  position: absolute;
+  float: left;
+  font-size: 70px;
+  opacity: 0.5;
+  text-transform: capitalize;
+  margin-right: 5px auto;
+  margin-top: 15px;
+  z-index: 2;
+  word-spacing: 10px;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 40px;
+  padding: 0px 15px 0px 25px;
+}
+div p {
+  float: left;
+  text-align: left;
+  display: inline-table;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  border: solid 3px black;
+}
+
+
+ul{
+  float: left;
+  text-align: left;
+  display: inline-table;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  border: solid 3px black;
+}
+main {
+  width: 960px;
+  margin: 30px auto;
+  border: solid 3px black;
+}
