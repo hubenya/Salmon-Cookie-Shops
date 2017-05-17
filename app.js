@@ -25,16 +25,16 @@ Store.prototype.cookieSoldEachHour = function() {
      //this.totalCookiesLocation += this.cookiesSoldPerHour[i];
   }
 
-}
+};
   //console.log(this.cookieSoldEachHour());
   //I was testing my code to see where my problem is.
   //console.log('what cookies sold per hour', this.cookiesSoldPerHour);
-   this.totalCookiesDaily = function() {
-    for (var j = 0; j < this.cookiesSoldPerHour; j++) {
-     this.totalCookiesLocation += this.cookiesSoldPerHour[j];
+this.totalCookiesDaily = function() {
+  for (var j = 0; j < this.cookiesSoldPerHour; j++) {
+    this.totalCookiesLocation += this.cookiesSoldPerHour[j];
 
   //console.log('Total cookies daily' + totalCookiesDaily());
-}
+  }
 
 };
 
@@ -76,4 +76,4 @@ storeList(SeaTacAirport);
 storeList(SeattleCenter);
 storeList(CapitolHill);
 storeList(Alki);
-//this.totalCookiesDaily(FirstandPike);
+this.totalCookiesDaily(FirstandPike);
