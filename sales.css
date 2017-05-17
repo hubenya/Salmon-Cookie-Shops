@@ -39,26 +39,6 @@ nav ul li {
   margin-top: 40px;
   padding: 0px 15px 0px 25px;
 }
-div p {
-  float: left;
-  text-align: left;
-  display: inline-table;
-  margin-bottom: 5px;
-  margin-left: 5px;
-  border: solid 3px black;
-}
-
-
-ul{
-  float: left;
-  text-align: left;
-  display: inline-table;
-  margin-bottom: 5px;
-  margin-left: 5px;
-  border: solid 3px black;
-}
-main {
-  width: 960px;
-  margin: 30px auto;
-  border: solid 3px black;
+body {
+  border: dotted 3px orange;
 }
