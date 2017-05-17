@@ -1,112 +1,71 @@
 'use strict';
-
 //I wanted to practice and make it loop but was not able to loop more than once. i feel like i'm missing something
 var hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm',];
+// hours.length
 
-var firstAndPike = {
-  location: 'First and Pike',
-  minCust: 23,
-  maxCust: 65,
-  avgSale: 6.3,
-  cookiesSoldPerHour: [],
-  totalSoldCookiesPike: 0,
-
-    //random customer genrator
-  customerEachHour: function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
-  },
-  cookieSoldEachHour: function() {
-    for (var i = 0; i < hours.length; i++) {
-      this.cookiesSoldPerHour.push(Math.floor(this.avgSale * this.customerEachHour()));
-      //console.log(hours[i], this.cookiesSoldPerHour[i]);
-      firstAndPike.totalSoldCookiesPike +- this.cookiesSoldPerHour[i];
-      //need to add total sold logic
-      hours[i], this.cookiesSoldPerHour[i];
-    }
-      //console.log(this.customerEachHour());
+function Store(location, minimum, maximum, averageSales) {
+  this.location = location;
+  this.minimum = minimum;
+  this.maximum = maximum;
+  this.averageSales = averageSales;
+  this.cookiesSoldPerHour = [];
+  this.totalSoldCookies = 0;
+}
+//random customer genrator that come through the door
+Store.prototype.randomNumberGenarator = function(){
+  return Math.floor(Math.random() * (this.maximum - this.minimum) + this.minimum);
+};
+//console.log(this.randomNumberGenarator);
+// loop to see how many cookies are sold each hour per store
+Store.prototype.cookieSoldEachHour = function() {
+  for (var i = 0; i < hours.length; i++) {
+    this.cookiesSoldPerHour.push(Math.floor(this.averageSales * this.randomNumberGenarator()));
   }
 
+  //console.log(this.cookieSoldEachHour());
+  //I was testing my code to see where my problem is.
+  //console.log('what cookies sold per hour', this.cookiesSoldPerHour);
 };
-firstAndPike.cookieSoldEachHour();
-firstAndPike.cookiesSoldPerHour;
+function sumArray(this.cookiesSoldPerHour) {
+  var total = this.cookiesSoldPerHour + this.cookieSoldEachHour();
+  return total;
+}
 
-/*
+function storeList(store) {
+  var container = document.createElement('div');
+  container.innerHTML = '<p>' + store.location + '</p>';
+  document.body.appendChild(container);
 
-var hours = ['6 am', '7 am', '8 am', '9 am', '10am', '11am', '12pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm',];
+  var list = document.createElement('ul');
+  var list_arr = [];
 
-  var firstAndPike = {
-    location: 'First and Pike',
-    minCust: 23,
-    maxCust: 65,
-    avgSale: 6.3,
-    cookiesSoldPerHour: [],
+  for (var i = 0; i < hours.length; i++) {
+    list_arr.push('<li>' + hours[i]+ ': ' + store.cookiesSoldPerHour[i] + '</li>');
 
-    //random customer genrator
-    customerEachHour: function() {
-      return Math.floor(Math.random() * (this.maxCust - this.minCust +1) + this.minCust);
-    },
-    cookieSoldPerHour: function() {
-      for (var i = 0; i < hours.lenght; i++) {
-        this.cookieSoldPerHour.push(Math.floor(this.avgSale * this.cusEachHour()));
-        console.log(hours[0], this.cookieSoldPerHour[0]);
-
-      }
-      console.log(this.customerEachHour());
-    }
-
-  };
-  firstAndPike.cookieSoldPerHour();
-  firstAndPike.custPerHour;
-
-
-
-
-
-var seaTacAirport = {
-  location: 'SeaTac Airport',
-  minCust: 3,
-  maxCust: 24,
-  avgCookieSale: 1.2,
-  details: function() {
-    return 'Salmon Cookie shop at ' + this.location + ' has minimum of ' + this.minCust + ' customers and maximum of ' + this.minCust + '. Which averages out to ' + this.avgCookieSale;
   }
-};
+  var full_list = list_arr.join('');
+  list.innerHTML = full_list;
+  document.body.appendChild(list);
+}
 
-seaTacAirport.details();
+ //list of stores data
+var FirstandPike = new Store('First and Pike',23, 65, 6.3);
+var SeaTacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
+var SeattleCenter = new Store('Seattle Center', 11, 38, 3.7);
+var CapitolHill = new Store('Capitol Hill', 20, 38, 2.3);
+var Alki = new Store('Alki',2, 16, 4.6);
 
-var seattleCenter = {
-  location: 'Seattle Center',
-  minCust: 11,
-  maxCust: 38,
-  avgCookieSale: 3.7,
-  details: function() {
-    return 'Salmon Cookie shop at ' + this.location + ' has minimum of ' + this.minCust + ' customers and maximum of ' + this.minCust + '. Which averages out to ' + this.avgCookieSale;
-  }
-};
-
-seattleCenter.details();
-
-var capitolHill = {
-  location: 'Capitol Hill',
-  minCust: 20,
-  maxCust: 38,
-  avgCookieSale: 2.3,
-  details: function() {
-    return 'Salmon Cookie shop at ' + this.location + ' has minimum of ' + this.minCust + ' customers and maximum of ' + this.minCust + '. Which averages out to ' + this.avgCookieSale;
-  }
-};
-
-capitolHill.details();
-
-var Alki = {
-  location: 'Alki',
-  minCust: 2,
-  maxCust: 16,
-  avgCookieSale: 4.6,
-  details: function() {
-    return 'Salmon Cookie shop at ' + this.location + ' has minimum of ' + this.minCust + ' customers and maximum of ' + this.minCust + '. Which averages out to ' + this.avgCookieSale;
-  }
-};
-
-Alki.details();
-*/
+//var Stores = [FirstandPike, SeaTacAirport, SeattleCenter, CapitolHill, Alki];
+//var dataStores = [];
+//storing results for each store location
+FirstandPike.cookieSoldEachHour();
+SeaTacAirport.cookieSoldEachHour();
+SeattleCenter.cookieSoldEachHour();
+CapitolHill.cookieSoldEachHour();
+Alki.cookieSoldEachHour();
+storeList(FirstandPike);
+storeList(SeaTacAirport);
+storeList(SeattleCenter);
+storeList(CapitolHill);
+storeList(Alki);
+totalLocation();
