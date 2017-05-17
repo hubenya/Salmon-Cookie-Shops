@@ -1,4 +1,5 @@
 'use strict';
+
 //I wanted to practice and make it loop but was not able to loop more than once. i feel like i'm missing something
 var hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm',];
 // hours.length
@@ -9,7 +10,9 @@ function Store(location, minimum, maximum, averageSales) {
   this.maximum = maximum;
   this.averageSales = averageSales;
   this.cookiesSoldPerHour = [];
-  this.totalSoldCookies = 0;
+  this.totalCookies = 0;
+  //this.totalCookiesDaily();
+
 }
 //random customer genrator that come through the door
 Store.prototype.randomNumberGenarator = function(){
@@ -20,29 +23,32 @@ Store.prototype.randomNumberGenarator = function(){
 Store.prototype.cookieSoldEachHour = function() {
   for (var i = 0; i < hours.length; i++) {
     this.cookiesSoldPerHour.push(Math.floor(this.averageSales * this.randomNumberGenarator()));
+     //this.totalCookiesLocation += this.cookiesSoldPerHour[i];
   }
-
-  //console.log(this.cookieSoldEachHour());
-  //I was testing my code to see where my problem is.
-  //console.log('what cookies sold per hour', this.cookiesSoldPerHour);
 };
-function sumArray(this.cookiesSoldPerHour) {
-  var total = this.cookiesSoldPerHour + this.cookieSoldEachHour();
-  return total;
-}
+//this is total cookies calculator
+Store.prototype.totalCookiesCalculator = function(){
+  for (var j = 0; j < this.cookiesSoldPerHour.length; j++) {
+    this.totalCookies += this.cookiesSoldPerHour[j];
+  //console.log('Total cookies daily' + totalCookiesDaily());
+  }
+  return this.totalCookies;
+};
 
-function storeList(store) {
+function storeList(storeLocation) {
   var container = document.createElement('div');
-  container.innerHTML = '<p>' + store.location + '</p>';
+  container.innerHTML = '<p>' + storeLocation.location + '</p>';
   document.body.appendChild(container);
 
   var list = document.createElement('ul');
   var list_arr = [];
 
   for (var i = 0; i < hours.length; i++) {
-    list_arr.push('<li>' + hours[i]+ ': ' + store.cookiesSoldPerHour[i] + '</li>');
+    list_arr.push('<li>' + hours[i]+ ': ' + storeLocation.cookiesSoldPerHour[i] + '</li>');
 
   }
+
+  list_arr.push('<li> Total: ' + storeLocation.totalCookiesCalculator() + '</li>');
   var full_list = list_arr.join('');
   list.innerHTML = full_list;
   document.body.appendChild(list);
@@ -53,7 +59,7 @@ var FirstandPike = new Store('First and Pike',23, 65, 6.3);
 var SeaTacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
 var SeattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var CapitolHill = new Store('Capitol Hill', 20, 38, 2.3);
-var Alki = new Store('Alki',2, 16, 4.6);
+var Alki = new Store('Alki', 2, 16, 4.6);
 
 //var Stores = [FirstandPike, SeaTacAirport, SeattleCenter, CapitolHill, Alki];
 //var dataStores = [];
@@ -63,9 +69,10 @@ SeaTacAirport.cookieSoldEachHour();
 SeattleCenter.cookieSoldEachHour();
 CapitolHill.cookieSoldEachHour();
 Alki.cookieSoldEachHour();
+//totalCookiesDaily(FirstandPike);
 storeList(FirstandPike);
 storeList(SeaTacAirport);
 storeList(SeattleCenter);
 storeList(CapitolHill);
 storeList(Alki);
-totalLocation();
+//this.totalCookiesDaily(FirstandPike);

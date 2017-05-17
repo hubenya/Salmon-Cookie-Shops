@@ -53,6 +53,8 @@ a {
 header {
   height: 100px;
   background: #444;
+	color: #fff;
+	padding: 5px;
   position: relative;
   z-index: 1;
 }
@@ -83,42 +85,45 @@ nav ul li {
   margin-top: 40px;
   padding: 0px 15px 0px 25px;
 }
-
+p {
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
 main {
   width: 960px;
   margin: 30px auto;
-	border: dotted 2px orange;
 }
 img {
   position: relative;
   height: 200px;
   width: auto;
   padding: 5px;
-  /*border-radius: 20%;*/
-  /*border: 3px solid #665544;*/
+  border-radius: 20%;
+  border: 3px solid #665544;
 }
 h2 {
   font-size: 20px;
   margin-bottom: 10px;
   font-family: cursive;
 }
-p {
+main p {
   margin: 15px 0px;
   font-family:monospace;
   font-size: 20px;
   color: white;
-  padding: 20px;
-	margin-bottom: 5px;
-  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-rendering: auto;
   background: #444 50%;
   opacity: 0.7;
-	border: dotted 2px orange;
-	thead {
-	  background: #777;
-	}
-	
-	td {
-	  padding: 20px;
-	  border: solid 1px black;
-	}
+}
+footer {
+  height: 100px;
+  background: #444;
+  position: relative;
+  z-index: 1;
+}
+footer div {
+  width: 960px;
+  margin: 0 auto;
+}
