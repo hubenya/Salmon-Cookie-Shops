@@ -3,7 +3,6 @@ body {
   font-family: helvetica;
 }
 
-
 header {
   height: 100px;
   background: #444;
@@ -36,9 +35,24 @@ h1 {
 nav ul li {
   display: inline-block;
   margin-right: 10px;
-  margin-top: 40px;
+  margin-top: 30px;
   padding: 0px 15px 0px 25px;
+  text: white;
 }
 body {
   border: dotted 3px orange;
+}
+main table thead {
+  background: #888;
+}
+
+main table thead td {
+  padding: 15px;
+  border: solid 1px black;
+}
+
+main table tbody td {
+  background: #888;
+  padding: 15px;
+  border: solid 1px black;
 }
