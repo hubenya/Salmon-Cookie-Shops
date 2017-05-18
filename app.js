@@ -35,6 +35,48 @@ Store.prototype.totalCookiesCalculator = function(){
   return this.totalCookies;
 };
 
+//header function
+var tHead = document.getElementById('hours-listed');//
+console.log('t head', tHead);
+//var hourRow = document.createElement('tr');
+//tHead.appendChild(hourRow);
+function renderHeader() {
+  var hourRow = document.createElement('tr'); //crated table row elemet and assigning a value to hourRow.
+  tHead.appendChild(hourRow);// hourRow is getting append to the table header a a child.
+  for (var i=0; i < hours.length; i++) {   //lopping through hour veriable to display hour in individuals TD elements
+    var hourCell = document.createElement('td');// creating individual td element and assigning to hour veriable
+    hourCell.innerHTML = hours[i]; //itterating through store hour array and assigning specific index valu to to inned HTML the previously created element of hourCell
+    hourRow.appendChild(hourCell);//attching/appending veriable hourCell to the variable hourRow as a child
+    console.log('hourcelll', hourCell);// print
+  }
+}
+
+renderHeader();//calling the function
+
+
+
+
+//this is where i'm trying to call table data. and its not working.
+// Store.prototype.render = function() {
+//   var elNewRow = document.getElementById('tr');
+//   var tablebody = document.getElementById('table-body');
+//     // var arrData = [];
+//   tablebody.innerHTML = this.location;
+//   elNewRow.appendChild('table-body');
+//
+//   for (var i = 0; i < this.cookiesSoldPerHour.length; i++) {
+//     var tableHourly = document.createElement('table-body');
+//     tableHourly.innerHTML = this.cookiesSoldPerHour[i];
+//     elNewRow.appendChild(tableHourly);
+//   }
+//
+//   var total = document.createElement('table-body');
+//   total.innerHTML = this.totalCookies;
+//   elNewRow.appendChild(total);
+//
+// };
+
+//this is where my logic is to print sales list
 function storeList(storeLocation) {
   var container = document.createElement('div');
   container.innerHTML = '<p>' + storeLocation.location + '</p>';
@@ -47,14 +89,13 @@ function storeList(storeLocation) {
     list_arr.push('<li>' + hours[i]+ ': ' + storeLocation.cookiesSoldPerHour[i] + '</li>');
 
   }
-
   list_arr.push('<li> Total: ' + storeLocation.totalCookiesCalculator() + '</li>');
   var full_list = list_arr.join('');
   list.innerHTML = full_list;
   document.body.appendChild(list);
 }
 
- //list of stores data
+ //list of stores data array isertion
 var FirstandPike = new Store('First and Pike',23, 65, 6.3);
 var SeaTacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
 var SeattleCenter = new Store('Seattle Center', 11, 38, 3.7);
@@ -75,4 +116,8 @@ storeList(SeaTacAirport);
 storeList(SeattleCenter);
 storeList(CapitolHill);
 storeList(Alki);
-//this.totalCookiesDaily(FirstandPike);
+// FirstandPike.render();
+// SeaTacAirport.render();
+// SeattleCenter.render();
+// CapitolHill.render();
+// Alki.render();

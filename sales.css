@@ -42,3 +42,11 @@ nav ul li {
 body {
   border: dotted 3px orange;
 }
+main table thead {
+  background: #888;
+}
+
+main table thead td {
+  padding: 20px;
+  border: solid 1px black;
+}
