@@ -4,8 +4,8 @@
 var hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm',];
 // hours.length
 
-function Store(location, minimum, maximum, averageSales) {
-  this.location = location;
+function Store(name, minimum, maximum, averageSales) {
+  this.name = name;
   this.minimum = minimum;
   this.maximum = maximum;
   this.averageSales = averageSales;
@@ -79,11 +79,11 @@ function renderBody() {
   console.log('Testing cookieRow', cookieRow);
   var storeRow = document.createElement('td');
   console.log('Testing storeRow', storeRow);
-  storeRow.textContent = Store.location;
+  storeRow.innerHTML = this.name;
   cookieRow.appendChild(storeRow);
   for (var j=0; j < Store.length; j++) {
     var cookCell = document.createElement('td');
-    cookCell.innerHTML = Store[j];
+    cookCell.innerHTML = Stores[j];
     cookieRow.appendChild(cookCell);
     console.log('Cookies cell', cookCell);
   }
@@ -94,7 +94,7 @@ renderBody();
 //this is where my logic is to print sales list
 function storeList(storeLocation) {
   var container = document.createElement('div');
-  container.innerHTML = '<p>' + storeLocation.location + '</p>';
+  container.innerHTML = '<p>' + storeLocation.name + '</p>';
   document.body.appendChild(container);
 
   var list = document.createElement('ul');
@@ -117,9 +117,9 @@ var SeattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var CapitolHill = new Store('Capitol Hill', 20, 38, 2.3);
 var Alki = new Store('Alki', 2, 16, 4.6);
 
-//var Stores = [FirstandPike, SeaTacAirport, SeattleCenter, CapitolHill, Alki];
+var Stores = [FirstandPike, SeaTacAirport, SeattleCenter, CapitolHill, Alki];
 //var dataStores = [];
-//storing results for each store location
+//storing results for each store name
 FirstandPike.cookieSoldEachHour();
 SeaTacAirport.cookieSoldEachHour();
 SeattleCenter.cookieSoldEachHour();
