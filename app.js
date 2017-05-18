@@ -2,8 +2,7 @@
 
 //I wanted to practice and make it loop but was not able to loop more than once. i feel like i'm missing something
 var hours = [' ', '6:am', '7:am', '8:am', '9:am', '10:am', '11:am', '12:pm', '1:pm', '2:pm', '3:pm', '4:pm', '5:pm', '6:pm', '7:pm', 'Total'];
-// hours.length
-
+//Store data
 function Store(name, minimum, maximum, averageSales) {
   this.name = name;
   this.minimum = minimum;
@@ -11,8 +10,6 @@ function Store(name, minimum, maximum, averageSales) {
   this.averageSales = averageSales;
   this.cookiesSoldPerHour = [];
   this.totalCookies = 0;
-  //this.totalCookiesDaily();
-
 }
 //random customer genrator that come through the door
 Store.prototype.randomNumberGenarator = function(){
@@ -26,7 +23,6 @@ Store.prototype.cookieSoldEachHour = function() {
     //this.totalCookies += this.cookiesSoldPerHour[i];
   }
 };
-
 //this is total cookies calculator
 Store.prototype.totalCookiesCalculator = function(){
   for (var j = 0; j < this.cookiesSoldPerHour.length; j++) {
@@ -35,7 +31,6 @@ Store.prototype.totalCookiesCalculator = function(){
   }
   return this.totalCookies;
 };
-
 
 //header function
 var tHead = document.getElementById('hours-listed');//
@@ -53,10 +48,7 @@ function renderHeader() {
   }
 }
 renderHeader();//calling the function
-
 //this is where i'm trying to call table data. and its not working.
-
-
 Store.prototype.renderBody = function() {
   var tableData = document.getElementById('table-body');//
   var cookieRow = document.createElement('tr');
@@ -80,7 +72,7 @@ Store.prototype.renderBody = function() {
 };
 
 
-//this is where my logic is to print sales list
+//this is where my logic is to print sales list for mondays lab
 // function storeList(storeLocation) {
 //   var container = document.createElement('div');
 //   container.innerHTML = '<p>' + storeLocation.name + '</p>';
@@ -106,8 +98,6 @@ var SeattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var CapitolHill = new Store('Capitol Hill', 20, 38, 2.3);
 var Alki = new Store('Alki', 2, 16, 4.6);
 
-//var Stores = [FirstandPike, SeaTacAirport, SeattleCenter, CapitolHill, Alki];
-//var dataStores = [];
 //storing results for each store location
 FirstandPike.cookieSoldEachHour();
 SeaTacAirport.cookieSoldEachHour();
@@ -120,7 +110,7 @@ SeaTacAirport.renderBody();
 SeattleCenter.renderBody();
 CapitolHill.renderBody();
 Alki.renderBody();
-FirstandPike.totalCookiesCalculator();
+
 // storeList(FirstandPike);
 // storeList(SeaTacAirport);
 // storeList(SeattleCenter);
