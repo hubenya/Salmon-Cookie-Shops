@@ -50,31 +50,46 @@ function renderHeader() {
     console.log('hourcelll', hourCell);// print
   }
 }
-
 renderHeader();//calling the function
 
-
+// //First attmept to make store print cookieTable
+// var cookieTable = document.getElementById('table-body');//
+// console.log('t head', cookieTable);
+// //var hourRow = document.createElement('tr');
+// //tbody.appendChild(cookieRow);
+// function renderBody() {
+//   var cookieRow = document.createElement('tr');
+//   cookieTable.appendChild(cookieRow);
+//   for (var j=0; j < hours.length; j++) {
+//     var cookCell = document.createElement('td');
+//     cookCell.innerHTML = Store.cookiesSoldPerHour;
+//     cookieRow.appendChild(cookCell);
+//     console.log('Cookies cell', cookCell);
+//   }
+// }
+// renderBody();//calling the function
 
 
 //this is where i'm trying to call table data. and its not working.
-// Store.prototype.render = function() {
-//   var elNewRow = document.getElementById('tr');
-//   var tablebody = document.getElementById('table-body');
-//     // var arrData = [];
-//   tablebody.innerHTML = this.location;
-//   elNewRow.appendChild('table-body');
-//
-//   for (var i = 0; i < this.cookiesSoldPerHour.length; i++) {
-//     var tableHourly = document.createElement('table-body');
-//     tableHourly.innerHTML = this.cookiesSoldPerHour[i];
-//     elNewRow.appendChild(tableHourly);
-//   }
-//
-//   var total = document.createElement('table-body');
-//   total.innerHTML = this.totalCookies;
-//   elNewRow.appendChild(total);
-//
-// };
+var cookieRow = document.getElementById('table-body');//
+console.log('t head', cookieRow);
+
+function renderBody() {
+  var cookieRow = document.createElement('tr');
+  console.log('Testing cookieRow', cookieRow);
+  var storeRow = document.createElement('td');
+  console.log('Testing storeRow', storeRow);
+  storeRow.textContent = Store.location;
+  cookieRow.appendChild(storeRow);
+  for (var j=0; j < Store.length; j++) {
+    var cookCell = document.createElement('td');
+    cookCell.innerHTML = Store[j];
+    cookieRow.appendChild(cookCell);
+    console.log('Cookies cell', cookCell);
+  }
+
+}
+renderBody();
 
 //this is where my logic is to print sales list
 function storeList(storeLocation) {
@@ -110,13 +125,13 @@ SeaTacAirport.cookieSoldEachHour();
 SeattleCenter.cookieSoldEachHour();
 CapitolHill.cookieSoldEachHour();
 Alki.cookieSoldEachHour();
-//totalCookiesDaily(FirstandPike);
+
 storeList(FirstandPike);
 storeList(SeaTacAirport);
 storeList(SeattleCenter);
 storeList(CapitolHill);
 storeList(Alki);
-// FirstandPike.render();
+//FirstandPike.render();
 // SeaTacAirport.render();
 // SeattleCenter.render();
 // CapitolHill.render();
