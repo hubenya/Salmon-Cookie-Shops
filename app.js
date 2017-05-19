@@ -1,7 +1,7 @@
 'use strict';
 
 //I wanted to practice and make it loop but was not able to loop more than once. i feel like i'm missing something
-var hours = [' ', '6:am', '7:am', '8:am', '9:am', '10:am', '11:am', '12:pm', '1:pm', '2:pm', '3:pm', '4:pm', '5:pm', '6:pm', '7:pm', 'Total'];
+var hours = ['Store Name ', '6:am', '7:am', '8:am', '9:am', '10:am', '11:am', '12:pm', '1:pm', '2:pm', '3:pm', '4:pm', '5:pm', '6:pm', '7:pm', 'Total'];
 //Store data
 function Store(name, minimum, maximum, averageSales) {
   this.name = name;
@@ -49,8 +49,8 @@ function renderHeader() {
 }
 renderHeader();//calling the function
 //this is where i'm trying to call table data. and its not working.
+var tableData = document.getElementById('table-body');//
 Store.prototype.renderBody = function() {
-  var tableData = document.getElementById('table-body');//
   var cookieRow = document.createElement('tr');
   //console.log('Testing cookieRow', cookieRow);
   var storeRow = document.createElement('td');
@@ -71,25 +71,23 @@ Store.prototype.renderBody = function() {
   //console.log('t head', cookieRow2);
 };
 
+function evenAdder(event){
+  event.preventDefault();
 
-//this is where my logic is to print sales list for mondays lab
-// function storeList(storeLocation) {
-//   var container = document.createElement('div');
-//   container.innerHTML = '<p>' + storeLocation.name + '</p>';
-//   document.body.appendChild(container);
-//
-//   var list = document.createElement('ul');
-//   var list_arr = [];
-//
-//   for (var i = 0; i < hours.length; i++) {
-//     list_arr.push('<li>' + hours[i]+ ': ' + storeLocation.cookiesSoldPerHour[i] + '</li>');
-//
-//   }
-//   list_arr.push('<li> Total: ' + storeLocation.totalCookiesCalculator() + '</li>');
-//   var full_list = list_arr.join('');
-//   list.innerHTML = full_list;
-//   document.body.appendChild(list);
-// }
+  var name = event.target.name.value;
+  var minimum = event.target.minimum.value;
+  var maximum = event.target.maximum.value;
+  var averageSales = event.target.averageSales.value;
+
+}
+var storeNew = new evenAdder('name', 'minimum', 'maximum', 'averageSales');
+form.reset();
+
+storeNew.cookieSoldEachHour();
+storeNew.renderBody();
+
+form.addEventListener('submit', evenAdder);
+
 
  //list of stores data array isertion
 var FirstandPike = new Store('First and Pike',23, 65, 6.3);
@@ -110,14 +108,3 @@ SeaTacAirport.renderBody();
 SeattleCenter.renderBody();
 CapitolHill.renderBody();
 Alki.renderBody();
-
-// storeList(FirstandPike);
-// storeList(SeaTacAirport);
-// storeList(SeattleCenter);
-// storeList(CapitolHill);
-// storeList(Alki);
-//FirstandPike.render();
-// SeaTacAirport.render();
-// SeattleCenter.render();
-// CapitolHill.render();
-// Alki.render();
