@@ -3,6 +3,7 @@
 //I wanted to practice and make it loop but was not able to loop more than once. i feel like i'm missing something
 var hours = ['Store Name ', '6:am', '7:am', '8:am', '9:am', '10:am', '11:am', '12:pm', '1:pm', '2:pm', '3:pm', '4:pm', '5:pm', '6:pm', '7:pm', 'Total'];
 //Store data
+var form = document.getElementById('store_name');
 function Store(name, minimum, maximum, averageSales) {
   this.name = name;
   this.minimum = minimum;
@@ -70,24 +71,24 @@ Store.prototype.renderBody = function() {
 
   //console.log('t head', cookieRow2);
 };
-
-function evenAdder(event){
-  event.preventDefault();
+//Event hendler call function
+function eventAdder(e) {
+  e.preventDefault();
 
   var name = event.target.name.value;
   var minimum = event.target.minimum.value;
   var maximum = event.target.maximum.value;
   var averageSales = event.target.averageSales.value;
 
+  var storeNew = new Store(name, minimum, maximum, averageSales);
+  form.reset();
+
+  storeNew.cookieSoldEachHour();
+  storeNew.renderBody();
+
 }
-var storeNew = new evenAdder('name', 'minimum', 'maximum', 'averageSales');
-form.reset();
-
-storeNew.cookieSoldEachHour();
-storeNew.renderBody();
-
-form.addEventListener('submit', evenAdder);
-
+form.addEventListener('submit', eventAdder);
+////////////////////////////////////
 
  //list of stores data array isertion
 var FirstandPike = new Store('First and Pike',23, 65, 6.3);
