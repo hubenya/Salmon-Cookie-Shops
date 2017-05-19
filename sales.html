@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Salmon Cookies Sales</title>
+    <title>Cookies Sales</title>
     <link rel="stylesheet" href="sales.css">
   </head>
   <body>
     <header>
       <div>
-      <h1>Salmon Cookie Shops Sales</h1>
+        <img src="https://raw.githubusercontent.com/codefellows/seattle-201d22/master/06-dom_objects_domain_modeling/lab/helpful-resources/salmon.png">
+      <h1>Cookie Shops Sales</h1>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -15,11 +16,37 @@
           <li><a href="location.asp">Location</a></li>
         </ul>
       </nav>
-    </div>
+      </div>
     </header>
+
+      <content>
+        <form id="Store_name">
+          <fieldset>
+            <label for="name">Store Name:</label>
+            <input type="text" name="name" placeholder="enter store name" required>
+          </fieldset>
+
+          <fieldset>
+            <label for="Store_cookies_minimum">Cookies Minimum:</label>
+            <input type="text" name="cookies_max" placeholder="enter cookies minimum" required>
+          </fieldset>
+
+          <fieldset>
+            <label for="Store_cookies_maximum">Cookies Maximum:</label>
+            <input type="text" name="cookies_max" placeholder="enter cookies maximum" required>
+          </fieldset>
+
+          <fieldset>
+            <label for="Store_cookies_min">Cookies Average:</label>
+            <input type="text" name="cookies_max" placeholder="enter average sales" required>
+          </fieldset>
+
+          <button id="submit-btn" type="submit">Submit!</button>
+        </form>
+      </content>
+
     <main>
       <table>
-
         <thead id="hours-listed"></thead>
 
         <tbody id="table-body"></tbody>
