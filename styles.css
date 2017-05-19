@@ -48,7 +48,7 @@ table {
 /* my css code starts here */
 a {
   text-decoration: none;
-  color: #fff;
+  color: #c89e71;
 }
 header {
   height: 100px;
@@ -64,15 +64,16 @@ header div {
 }
 nav {
   position: absolute;
-  font-size: 25px;
+  font-size: 45px;
   margin: 0px;
   z-index: 3;
 }
 h1 {
   position: absolute;
+	color: #2f3121;
   float: left;
   font-size: 70px;
-  opacity: 0.5;
+  opacity: 0.6;
   text-transform: capitalize;
   margin-right: 5px auto;
   margin-top: 15px;
@@ -82,7 +83,7 @@ h1 {
 nav ul li {
   display: inline-block;
   margin-right: 10px;
-  margin-top: 40px;
+  margin-top: 20px;
   padding: 0px 15px 0px 25px;
 }
 p {
@@ -95,11 +96,9 @@ main {
 }
 img {
   position: relative;
-  height: 200px;
+  height: 150px;
   width: auto;
   padding: 5px;
-  border-radius: 20%;
-  border: 3px solid #665544;
 }
 h2 {
   font-size: 20px;
