@@ -35,3 +35,54 @@ var bicycle = {
     gear: 1,
     frame_material: "carbon fiber"
 };
+
+
+var multiply = function (x, y) {
+  return x * y;
+};
+
+
+multiply(Math.random(), 200);
+//console.log("console loggggiiinnn", Math.random());
+
+
+// here is bob again, with his usual properties
+var bob = new Object();
+bob.name = "Bob Smith";
+bob.age = 30;
+// this time we have added a method, setAge
+bob.setAge = function (newAge){
+  bob.age = newAge;
+};
+// here we set bob's age to 40
+bob.setAge(20);
+// bob's feeling old.  Use our method to set bob's age to 20
+
+
+
+
+var bob = new Object();
+bob.age = 17;
+// this time we have added a method, setAge
+bob.setAge = function (newAge){
+  bob.age = newAge;
+};
+
+bob.getYearOfBirth = function () {
+  return 2014 - bob.age;
+};
+console.log(bob.getYearOfBirth());
+
+
+// here we define our method using "this", before we even introduce bob
+var setAge = function (newAge) {
+  this.age = newAge;
+};
+// now we make bob
+var bob = new Object();
+bob.age = 30;
+// and down here we just use the method we already made
+bob.setAge = setAge;
+
+// change bob's age to 50 here
+bob.setAge(50);
