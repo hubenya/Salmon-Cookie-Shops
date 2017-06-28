@@ -25,3 +25,13 @@ var snoopy = {
 var buddy = {};
 buddy.species = "golden retriever";
 buddy.age = 5;
+
+
+
+
+
+var bicycle = {
+    speed: 0,
+    gear: 1,
+    frame_material: "carbon fiber"
+};
