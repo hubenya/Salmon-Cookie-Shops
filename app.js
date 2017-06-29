@@ -1,5 +1,30 @@
 'use strict';
 
+// Our bob object again, but made using a constructor this time
+var bob = new Object();
+bob.name = "Bob Smith";
+bob.age = 30;
+// Here is susan1, in literal notation
+var susan1 = {
+  name: "Susan Jordan",
+  age: 24
+};
+// Make a new susan2 object, using a constructor instead
+
+
+
+var phonebookEntry1 = {};
+
+phonebookEntry1.name = 'Slavik Hubenya';
+phonebookEntry1.number = '(503) 565-5545';
+phonebookEntry1.phone = function() {
+  console.log('Calling ' + this.name + ' at ' + this.number + '...');
+};
+
+phonebookEntry1.phone();
+
+
+
 //I wanted to practice and make it loop but was not able to loop more than once. i feel like i'm missing something
 var hours = [' ', '6:am', '7:am', '8:am', '9:am', '10:am', '11:am', '12:pm', '1:pm', '2:pm', '3:pm', '4:pm', '5:pm', '6:pm', '7:pm', 'Total'];
 //Store data
